@@ -1,14 +1,17 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, Text } from 'react-native';
 import { TodoItem } from './TodoItem';
 import { Todo } from './TodoContext';
 
 type TodoListProps = {
+  title?: string;
   items: Todo[];
 };
 
-export const TodoList: React.FC<TodoListProps> = ({ items }) => (
+export const TodoList: React.FC<TodoListProps> = ({ title, items }) => (
   <ScrollView style={styles.container} contentContainerStyle={styles.listContent}>
+    <Text>{title}</Text>
+
     {items.map((todo, idx) => (
       <TodoItem
         key={idx}

@@ -5,28 +5,20 @@
  * @format
  */
 
-import { StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { TodoList } from './components/TodoList';
 import { TodoProvider, useTodos } from './components/TodoContext';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+function App({...props}) {
+  const { todos } = useTodos();
 
   return (
     <TodoProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
+      <View style={styles.container}>
+        <Text style={styles.header}>Minha Todo List</Text>
+        <TodoList title={props.title} items={todos} />
+      </View>
     </TodoProvider>
-  );
-}
-
-function AppContent() {
-  const { todos } = useTodos();
-  return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Minha Todo List</Text>
-      <TodoList items={todos} />
-    </View>
   );
 }
 
