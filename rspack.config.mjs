@@ -14,7 +14,8 @@ const __dirname = path.dirname(__filename);
  * Learn about Re.Pack configuration: https://re-pack.dev/docs/guides/configuration
  */
 
-const config = Repack.defineRspackConfig(({ mode }) => ({
+//const config =
+export default Repack.defineRspackConfig(({ mode }) => ({
   mode,
   context: __dirname,
   entry: './index.js',
@@ -48,4 +49,4 @@ const config = Repack.defineRspackConfig(({ mode }) => ({
   ],
 }));
 
-export default withZephyr()(config);
+//export default withZephyr()(config);

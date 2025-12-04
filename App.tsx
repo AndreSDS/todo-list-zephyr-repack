@@ -10,6 +10,12 @@ import { TodoList } from './components/TodoList';
 import { TodoProvider, useTodos } from './components/TodoContext';
 
 function App({ ...props }) {
+  return (
+    <AppContent {...props} />
+  );
+}
+
+const AppContent = ({ ...props }) => {
   const { todos } = useTodos();
 
   return (
@@ -19,7 +25,7 @@ function App({ ...props }) {
         <TodoList items={todos} />
       </View>
     </TodoProvider>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
