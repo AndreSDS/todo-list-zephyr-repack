@@ -4,14 +4,11 @@ import { TodoItem } from './TodoItem';
 import { Todo } from './TodoContext';
 
 type TodoListProps = {
-  title?: string;
   items: Todo[];
 };
 
-export const TodoList: React.FC<TodoListProps> = ({ title, items }) => (
+export const TodoList: React.FC<TodoListProps> = ({ items }) => (
   <ScrollView style={styles.container} contentContainerStyle={styles.listContent}>
-    <Text>{title}</Text>
-
     {items.map((todo, idx) => (
       <TodoItem
         key={idx}

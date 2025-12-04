@@ -9,14 +9,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import { TodoList } from './components/TodoList';
 import { TodoProvider, useTodos } from './components/TodoContext';
 
-function App({...props}) {
+function App({ ...props }) {
   const { todos } = useTodos();
 
   return (
     <TodoProvider>
       <View style={styles.container}>
-        <Text style={styles.header}>Minha Todo List</Text>
-        <TodoList title={props.title} items={todos} />
+        <Text style={styles.header}>{props.title}</Text>
+        <TodoList items={todos} />
       </View>
     </TodoProvider>
   );
