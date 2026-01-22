@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet, TouchableOpacity, TextInput } from "react-native";
 import React, { useState } from "react";
-import { Todo, useTodos } from "./TodoContext";
+import { Todo } from "../contexts/todoContext";
+import { useTodos } from "../hooks/useTodos";
 
 interface TodoItemProps extends Todo {
     index: number;

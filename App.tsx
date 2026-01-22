@@ -7,7 +7,6 @@
 
 import { StyleSheet, Text, View } from 'react-native';
 import { TodoList } from './components/TodoList';
-import { TodoProvider, useTodos } from './components/TodoContext';
 
 function App({ ...props }) {
   return (
@@ -16,15 +15,11 @@ function App({ ...props }) {
 }
 
 const AppContent = ({ ...props }) => {
-  const { todos } = useTodos();
-
   return (
-    <TodoProvider>
-      <View style={styles.container}>
-        <Text style={styles.header}>{props.title}</Text>
-        <TodoList items={todos} />
-      </View>
-    </TodoProvider>
+    <View style={styles.container}>
+      <Text style={styles.header}>{props.title}</Text>
+      <TodoList />
+    </View>
   )
 }
 
