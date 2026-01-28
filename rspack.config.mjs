@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
  * Learn about Re.Pack configuration: https://re-pack.dev/docs/guides/configuration
  */
 
-export default
+//export default
 const config = Repack.defineRspackConfig(({ mode }) => ({
   mode,
   context: __dirname,
@@ -44,7 +44,6 @@ const config = Repack.defineRspackConfig(({ mode }) => ({
       dts: false,
       exposes: {
         './TodoList': './App.tsx',
-        './TodoProvider': './components/TodoProvider.tsx',
       },
       shared: getSharedDependencies(),
     }),
